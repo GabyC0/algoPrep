@@ -164,4 +164,49 @@ binaryAgent(
   "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
 );
 
-//this is a change
+
+
+
+//DNA Pairing
+// Pairs of DNA strands consist of nucleobase pairs. Base pairs are represented by the characters AT and CG, which form building blocks of the DNA double helix.
+// The DNA strand is missing the pairing element. Write a function to match the missing base pairs for the provided DNA strand. For each character in the provided string, find the base pair character. Return the results as a 2d array.
+// The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+
+
+function pairElement(str) {
+  //AT
+  //CG
+
+  //declare empty final arr
+  let finalArr = [];
+  //declare empty mini arr
+  let pairArr = [];
+  //iterate through str
+  for (let i = 0; i < str.length; i++) {
+    switch (str[i]) {
+      //A : T
+      //if letter at str[i] === 'A'
+      case "A":
+        //emptyArr = [A, T]
+        pairArr = ["A", "T"];
+        //push to empty arr
+        finalArr.push(pairArr);
+        break;
+      case "T":
+        pairArr = ["T", "A"];
+        finalArr.push(pairArr);
+        break;
+      case "C":
+        pairArr = ["C", "G"];
+        finalArr.push(pairArr);
+        break;
+      case "G":
+        pairArr = ["G", "C"];
+        finalArr.push(pairArr);
+        break;
+    }
+  }
+  return finalArr;
+}
+
+pairElement("ATCGA");
